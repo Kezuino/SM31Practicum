@@ -9,4 +9,6 @@
 import Foundation
 
 println("HellGlow World!")
+var g = GlowAct(name: "Test", startTime: "22:00", rating: 3)
+g.showInfo()
 

@@ -9,7 +9,7 @@
 import Foundation
 
 class GlowAct: NSObject {
-    private var name:NSString, startTime:NSString
+    private var name:String, startTime:String
     private var rating:Int
     
     internal init(name:String, startTime:String, rating:Int) {
@@ -18,10 +18,23 @@ class GlowAct: NSObject {
         self.rating = rating
     }
     
-    internal NSString getName() {
+    internal func getName() -> String
+    {
         return self.name
     }
     
+    internal func getStartTime() -> String
+    {
+        return self.startTime
+    }
     
+    internal func getRating() -> Int
+    {
+        return self.rating
+    }
     
+    internal func showInfo()
+    {
+        println("The act is called \(self.getName()) and starts at \(self.getStartTime()). It is given an average rating of \(self.getRating())")
+    }
 }

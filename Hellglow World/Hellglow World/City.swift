@@ -36,11 +36,23 @@ class City: NSObject {
     
     internal func addGlowAct(glowAct:GlowAct)
     {
-        self.addGlowAct(glowAct)
+        self.glowActs.addObject(glowAct)
     }
     
     internal func showInfo()
     {
-        println("In the city of \(self.getName()) there are currently living \(self.getPopulation()) people.")
+        var glowActs = self.getGlowActs().count > 0 ?
+                self.getGlowActs().count > 1 ?
+                    "are \(self.getGlowActs().count) glow acts" :
+                    "is \(self.getGlowActs().count) glow act" :
+                "are no glow acts"
+        
+        println("In the city of \(self.getName()) there are currently living \(self.population) people.\nCurrently there \(glowActs) in the city")
+        
+        for glowAct in self.glowActs as [GlowAct] {
+            //Chosen not to use the showInfo() method from GlowAct since that does not fit in context.
+            
+            println("\n\(index + 1) \(glowAct.getName()) at \(glowAct.getStartTime()). Has a rating of \(glowAct.getRating())")
+        }
     }
 }

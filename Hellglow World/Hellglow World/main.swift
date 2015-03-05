@@ -8,7 +8,10 @@
 
 import Foundation
 
-println("HellGlow World!")
-var g = GlowAct(name: "Test", startTime: "22:00", rating: 3)
-g.showInfo()
+println("Hellglow World!")
+var blueLightAct = GlowAct(name: "The Bluelight Act", startTime: "22:20", rating: 8)
+var eindhoven = City(name: "Eindhoven", population: 22000)
+blueLightAct.showInfo()
+eindhoven.addGlowAct(blueLightAct)
+eindhoven.showInfo()
 

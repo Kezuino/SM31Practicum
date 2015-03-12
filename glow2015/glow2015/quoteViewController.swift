@@ -1,5 +1,5 @@
 //
-//  generalViewController.swift
+//  quoteViewController.swift
 //  glow2015
 //
 //  Created by fhict on 12/03/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class generalViewController: UIViewController {
+class quoteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,9 @@ class generalViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func btnClose(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

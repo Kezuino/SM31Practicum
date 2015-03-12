@@ -14,9 +14,10 @@
 		F5B56C441AA9C8DF00774149 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5B56C431AA9C8DF00774149 /* Images.xcassets */; };
 		F5B56C471AA9C8DF00774149 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5B56C451AA9C8DF00774149 /* LaunchScreen.xib */; };
 		F5B56C531AA9C8DF00774149 /* glow2015Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B56C521AA9C8DF00774149 /* glow2015Tests.swift */; };
-		F5B56C5D1AAA1C7A00774149 /* light-dolphins.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5B56C5C1AAA1C7A00774149 /* light-dolphins.jpg */; };
 		F5B56C5F1AB0E8EE00774149 /* eggcellent-273x300.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5B56C5E1AB0E8EE00774149 /* eggcellent-273x300.jpg */; };
-		F5B56C611AB1B1F000774149 /* generalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B56C601AB1B1F000774149 /* generalViewController.swift */; };
+		F5B56C631AB1B2F900774149 /* aboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B56C621AB1B2F900774149 /* aboutViewController.swift */; };
+		F5B56C651AB1BA2800774149 /* Light-bulb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5B56C641AB1BA2800774149 /* Light-bulb.jpg */; };
+		F5B56C671AB1BCA700774149 /* quoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B56C661AB1BCA700774149 /* quoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +42,10 @@
 		F5B56C4C1AA9C8DF00774149 /* glow2015Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = glow2015Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5B56C511AA9C8DF00774149 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5B56C521AA9C8DF00774149 /* glow2015Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = glow2015Tests.swift; sourceTree = "<group>"; };
-		F5B56C5C1AAA1C7A00774149 /* light-dolphins.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "light-dolphins.jpg"; path = "../../../../Downloads/light-dolphins.jpg"; sourceTree = "<group>"; };
 		F5B56C5E1AB0E8EE00774149 /* eggcellent-273x300.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "eggcellent-273x300.jpg"; path = "../../../../Downloads/eggcellent-273x300.jpg"; sourceTree = "<group>"; };
-		F5B56C601AB1B1F000774149 /* generalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = generalViewController.swift; sourceTree = "<group>"; };
+		F5B56C621AB1B2F900774149 /* aboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aboutViewController.swift; sourceTree = "<group>"; };
+		F5B56C641AB1BA2800774149 /* Light-bulb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Light-bulb.jpg"; path = "../../../../Downloads/Light-bulb.jpg"; sourceTree = "<group>"; };
+		F5B56C661AB1BCA700774149 /* quoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = quoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +87,8 @@
 		F5B56C361AA9C8DF00774149 /* glow2015 */ = {
 			isa = PBXGroup;
 			children = (
+				F5B56C641AB1BA2800774149 /* Light-bulb.jpg */,
 				F5B56C5E1AB0E8EE00774149 /* eggcellent-273x300.jpg */,
-				F5B56C5C1AAA1C7A00774149 /* light-dolphins.jpg */,
 				F5B56C391AA9C8DF00774149 /* AppDelegate.swift */,
 				F5B56C3E1AA9C8DF00774149 /* ViewController.swift */,
 				F5B56C401AA9C8DF00774149 /* Main.storyboard */,
@@ -94,7 +96,8 @@
 				F5B56C451AA9C8DF00774149 /* LaunchScreen.xib */,
 				F5B56C3B1AA9C8DF00774149 /* glow2015.xcdatamodeld */,
 				F5B56C371AA9C8DF00774149 /* Supporting Files */,
-				F5B56C601AB1B1F000774149 /* generalViewController.swift */,
+				F5B56C621AB1B2F900774149 /* aboutViewController.swift */,
+				F5B56C661AB1BCA700774149 /* quoteViewController.swift */,
 			);
 			path = glow2015;
 			sourceTree = "<group>";
@@ -206,9 +209,9 @@
 			files = (
 				F5B56C5F1AB0E8EE00774149 /* eggcellent-273x300.jpg in Resources */,
 				F5B56C421AA9C8DF00774149 /* Main.storyboard in Resources */,
+				F5B56C651AB1BA2800774149 /* Light-bulb.jpg in Resources */,
 				F5B56C471AA9C8DF00774149 /* LaunchScreen.xib in Resources */,
 				F5B56C441AA9C8DF00774149 /* Images.xcassets in Resources */,
-				F5B56C5D1AAA1C7A00774149 /* light-dolphins.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,10 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5B56C671AB1BCA700774149 /* quoteViewController.swift in Sources */,
 				F5B56C3F1AA9C8DF00774149 /* ViewController.swift in Sources */,
 				F5B56C3D1AA9C8DF00774149 /* glow2015.xcdatamodeld in Sources */,
 				F5B56C3A1AA9C8DF00774149 /* AppDelegate.swift in Sources */,
-				F5B56C611AB1B1F000774149 /* generalViewController.swift in Sources */,
+				F5B56C631AB1B2F900774149 /* aboutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

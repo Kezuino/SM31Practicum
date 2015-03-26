@@ -16,6 +16,7 @@
 		F57427661AC4015D00144244 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57427651AC4015D00144244 /* TableViewController.swift */; };
 		F574276A1AC401CB00144244 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57427691AC401CB00144244 /* DetailsViewController.swift */; };
 		F574276C1AC4028800144244 /* Pirate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F574276B1AC4028800144244 /* Pirate.swift */; };
+		F5F303591AC41404001E84FA /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F303581AC41404001E84FA /* Alamofire.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		F57427651AC4015D00144244 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ../TableViewController.swift; sourceTree = "<group>"; };
 		F57427691AC401CB00144244 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		F574276B1AC4028800144244 /* Pirate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pirate.swift; sourceTree = "<group>"; };
+		F5F303581AC41404001E84FA /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				F57427401AC3FEE400144244 /* Supporting Files */,
 				F57427691AC401CB00144244 /* DetailsViewController.swift */,
 				F574276B1AC4028800144244 /* Pirate.swift */,
+				F5F303581AC41404001E84FA /* Alamofire.swift */,
 			);
 			path = piratedApp;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5F303591AC41404001E84FA /* Alamofire.swift in Sources */,
 				F57427431AC3FEE500144244 /* AppDelegate.swift in Sources */,
 				F57427661AC4015D00144244 /* TableViewController.swift in Sources */,
 				F57427461AC3FEE500144244 /* piratedApp.xcdatamodeld in Sources */,
@@ -417,6 +421,7 @@
 				F57427611AC3FEE500144244 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F57427621AC3FEE500144244 /* Build configuration list for PBXNativeTarget "piratedAppTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +430,7 @@
 				F57427641AC3FEE500144244 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

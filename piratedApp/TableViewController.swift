@@ -9,9 +9,45 @@
 import UIKit
 
 class TableViewController: UITableViewController {
+    private var pirates = [Pirate]();
 
+    func loadJsonData()
+    {
+        var err:NSError?;
+        var url = "http://athena.fhict.nl/users/i886625/pirates.json";
+        request(.GET, url, parameters: nil, encoding : ParameterEncoding.JSON)
+            .responseJSON(options: NSJSONReadingOptions.MutableContainers, completionHandler: {(req, urlResp, json, err) in
+                println(NSJSONSerialization.isValidJSONObject(json!));
+                println(json!);
+                var js = json! as NSArray;
+                self.parseJsonData(js);
+                self.tableView.reloadData();
+            });
+    }
+    
+    func parseJsonData(data: NSArray)
+    {
+        for x: AnyObject! in data {
+            var dict:NSDictionary = x as NSDictionary;
+            var name = dict.objectForKey("name") as String;
+            var life = dict.objectForKey("life") as String;
+            var years = dict.objectForKey("years_active") as String;
+            var country = dict.objectForKey("country_of_origin") as String;
+            var comments = dict.objectForKey("comments") as String;
+            var pirate = Pirate(
+                name: name,
+                life: life,
+                yearsActive: years,
+                countryOrigin: country,
+                comments: comments
+            );
+            self.pirates.append(pirate);
+        }
+    }
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad();
+        self.loadJsonData();
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,26 +64,26 @@ class TableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return self.pirates.count;
     }
-
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
 
-        // Configure the cell...
+        var currentRow = indexPath.row;
+        var currentPirate = self.pirates[currentRow];
+        
+        cell.textLabel?.text = currentPirate.name;
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -84,14 +120,18 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        
+        var selectedRow = self.tableView.indexPathForSelectedRow();
+        var selectedPirate = self.pirates[selectedRow!.row];
+        
+        var controller = segue.destinationViewController as DetailsViewController;
+        controller.selectedPirate = selectedPirate;
     }
-    */
-
 }

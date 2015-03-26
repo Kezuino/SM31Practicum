@@ -8,6 +8,14 @@
 
 import Foundation
 
-class Pirate {
-
+public class Pirate {
+    var name:String!, life:String, yearsActive:String, counrtyOrigin:String, comments:String;
+    
+    init(name:String!, life:String, yearsActive:String, countryOrigin:String, comments:String) {
+        self.name = name!;
+        self.yearsActive = yearsActive;
+        self.life = life;
+        self.counrtyOrigin = countryOrigin;
+        self.comments = comments;
+    }
 }

@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		F57427431AC3FEE500144244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57427421AC3FEE500144244 /* AppDelegate.swift */; };
 		F57427461AC3FEE500144244 /* piratedApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F57427441AC3FEE500144244 /* piratedApp.xcdatamodeld */; };
-		F57427481AC3FEE500144244 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57427471AC3FEE500144244 /* ViewController.swift */; };
 		F574274B1AC3FEE500144244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F57427491AC3FEE500144244 /* Main.storyboard */; };
 		F574274D1AC3FEE500144244 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F574274C1AC3FEE500144244 /* Images.xcassets */; };
 		F57427501AC3FEE500144244 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F574274E1AC3FEE500144244 /* LaunchScreen.xib */; };
 		F574275C1AC3FEE500144244 /* piratedAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F574275B1AC3FEE500144244 /* piratedAppTests.swift */; };
+		F57427661AC4015D00144244 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57427651AC4015D00144244 /* TableViewController.swift */; };
+		F574276A1AC401CB00144244 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57427691AC401CB00144244 /* DetailsViewController.swift */; };
+		F574276C1AC4028800144244 /* Pirate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F574276B1AC4028800144244 /* Pirate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +33,15 @@
 		F57427411AC3FEE400144244 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F57427421AC3FEE500144244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F57427451AC3FEE500144244 /* piratedApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = piratedApp.xcdatamodel; sourceTree = "<group>"; };
-		F57427471AC3FEE500144244 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F574274A1AC3FEE500144244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F574274C1AC3FEE500144244 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F574274F1AC3FEE500144244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F57427551AC3FEE500144244 /* piratedAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = piratedAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F574275A1AC3FEE500144244 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F574275B1AC3FEE500144244 /* piratedAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = piratedAppTests.swift; sourceTree = "<group>"; };
+		F57427651AC4015D00144244 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ../TableViewController.swift; sourceTree = "<group>"; };
+		F57427691AC401CB00144244 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		F574276B1AC4028800144244 /* Pirate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pirate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +83,15 @@
 		F574273F1AC3FEE400144244 /* piratedApp */ = {
 			isa = PBXGroup;
 			children = (
+				F57427651AC4015D00144244 /* TableViewController.swift */,
 				F57427421AC3FEE500144244 /* AppDelegate.swift */,
-				F57427471AC3FEE500144244 /* ViewController.swift */,
 				F57427491AC3FEE500144244 /* Main.storyboard */,
 				F574274C1AC3FEE500144244 /* Images.xcassets */,
 				F574274E1AC3FEE500144244 /* LaunchScreen.xib */,
 				F57427441AC3FEE500144244 /* piratedApp.xcdatamodeld */,
 				F57427401AC3FEE400144244 /* Supporting Files */,
+				F57427691AC401CB00144244 /* DetailsViewController.swift */,
+				F574276B1AC4028800144244 /* Pirate.swift */,
 			);
 			path = piratedApp;
 			sourceTree = "<group>";
@@ -215,9 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F57427481AC3FEE500144244 /* ViewController.swift in Sources */,
 				F57427431AC3FEE500144244 /* AppDelegate.swift in Sources */,
+				F57427661AC4015D00144244 /* TableViewController.swift in Sources */,
 				F57427461AC3FEE500144244 /* piratedApp.xcdatamodeld in Sources */,
+				F574276C1AC4028800144244 /* Pirate.swift in Sources */,
+				F574276A1AC401CB00144244 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

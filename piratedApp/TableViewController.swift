@@ -7,41 +7,50 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+
+
 
 class TableViewController: UITableViewController {
     private var pirates = [Pirate]();
 
     func loadJsonData()
     {
-        var err:NSError?;
-        var url = "http://athena.fhict.nl/users/i886625/pirates.json";
-        request(.GET, url, parameters: nil, encoding : ParameterEncoding.JSON)
-            .responseJSON(options: NSJSONReadingOptions.MutableContainers, completionHandler: {(req, urlResp, json, err) in
-                println(NSJSONSerialization.isValidJSONObject(json!));
-                println(json!);
-                var js = json! as NSArray;
-                self.parseJsonData(js);
-                self.tableView.reloadData();
-            });
+        var jSONrequest = Alamofire.request(.GET, "http://athena.fhict.nl/users/i886625/pirates.json")
+        jSONrequest.validate()
+        jSONrequest.responseJSON
+            { (urlREQ, urlResp, responsestring, error) -> Void in
+                
+                if error == nil
+                {
+                    println(responsestring)
+                    self.parseJsonData(responsestring)
+                }
+                else
+                {
+                    //Something went wrong
+                    println(error)
+                    
+                }
+        }
+        tableView.reloadData();
     }
     
-    func parseJsonData(data: NSArray)
+    func parseJsonData(jsonData:AnyObject?)
     {
-        for x: AnyObject! in data {
-            var dict:NSDictionary = x as NSDictionary;
-            var name = dict.objectForKey("name") as String;
-            var life = dict.objectForKey("life") as String;
-            var years = dict.objectForKey("years_active") as String;
-            var country = dict.objectForKey("country_of_origin") as String;
-            var comments = dict.objectForKey("comments") as String;
-            var pirate = Pirate(
-                name: name,
-                life: life,
-                yearsActive: years,
-                countryOrigin: country,
-                comments: comments
-            );
-            self.pirates.append(pirate);
+        var jsonConverted = JSON(jsonData!)
+        println(jsonConverted)
+        
+        for (index: String, subJson: JSON) in jsonConverted {
+            let name = subJson["name"].string;
+            let life = subJson["life"].string;
+            let yearsActive = subJson["years_active"].string;
+            let countryOrigin = subJson["country_of_origin"].string;
+            let comments = subJson["comments"].string;
+            
+            let newPirate = Pirate(name: name, life: life!, yearsActive: yearsActive!, countryOrigin: countryOrigin!, comments: comments!);
+            pirates.append(newPirate);
         }
     }
     
@@ -74,14 +83,17 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        
+        //println("Wut?");
 
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        
         var currentRow = indexPath.row;
         var currentPirate = self.pirates[currentRow];
         
         cell.textLabel?.text = currentPirate.name;
 
-        return cell
+        return cell;
     }
     
 

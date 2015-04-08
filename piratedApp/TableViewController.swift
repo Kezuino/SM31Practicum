@@ -26,6 +26,7 @@ class TableViewController: UITableViewController {
                 {
                     println(responsestring)
                     self.parseJsonData(responsestring)
+                    self.tableView.reloadData()
                 }
                 else
                 {
@@ -34,7 +35,7 @@ class TableViewController: UITableViewController {
                     
                 }
         }
-        tableView.reloadData();
+
     }
     
     func parseJsonData(jsonData:AnyObject?)
@@ -91,7 +92,7 @@ class TableViewController: UITableViewController {
         var currentRow = indexPath.row;
         var currentPirate = self.pirates[currentRow];
         
-        cell.textLabel?.text = currentPirate.name;
+        cell.textLabel?.text = currentPirate.getName();
 
         return cell;
     }

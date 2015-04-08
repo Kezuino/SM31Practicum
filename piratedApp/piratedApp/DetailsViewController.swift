@@ -15,15 +15,19 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var lblActiveYears: UILabel!
     @IBOutlet weak var lblCountryBirth: UILabel!
     @IBOutlet weak var tvComments: UITextView!
+    
+    @IBAction func btnBack(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        self.lblName.text = self.selectedPirate?.name;
-        self.lblLife.text = self.selectedPirate?.life;
-        self.lblActiveYears.text = self.selectedPirate?.yearsActive;
-        self.lblCountryBirth.text = self.selectedPirate?.counrtyOrigin;
-        self.tvComments.text = self.selectedPirate?.comments;
+        self.lblName.text = self.selectedPirate?.getName();
+        self.lblLife.text = self.selectedPirate?.getLife();
+        self.lblActiveYears.text = self.selectedPirate?.getYearsActive();
+        self.lblCountryBirth.text = self.selectedPirate?.getCountyOfOrigin();
+        self.tvComments.text = self.selectedPirate?.getComments();
 
         // Do any additional setup after loading the view.
     }
